@@ -72,7 +72,7 @@ public class EmployeeManagementService {
 		if (employeeById.isPresent()) {
 			Employee employeeInDatabase = employeeById.get();
 			employeeInDatabase.setDeletedAt(new Date()); // Set the deletedAt field
-			repository.save(employeeInDatabase);
+			repository.deleteById(employeeId);
 			return true;
 		}
 		return false;
