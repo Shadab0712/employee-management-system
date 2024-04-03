@@ -1,0 +1,13 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata: 
+      name: product-microservice
+      labels:
+         app: productmicroservice
+         
+spec:
+     containers:
+         - name: employee-microservice
+          image: employee-microservice       

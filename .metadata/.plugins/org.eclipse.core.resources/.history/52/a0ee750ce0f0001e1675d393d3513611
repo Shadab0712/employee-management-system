@@ -1,0 +1,14 @@
+apiVersion: v1
+
+kind: Pod
+
+metadata: 
+      name: email-microservice
+      labels:
+         app: emailmicroservice
+         
+spec:
+     containers:
+         - name: email-microservice-container
+           image: employee-microservice:latest 
+           imagePullPolicy: Always

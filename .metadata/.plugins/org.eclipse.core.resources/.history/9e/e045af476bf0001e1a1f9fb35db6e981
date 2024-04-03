@@ -1,0 +1,5 @@
+package com.qtechlabs.service;
+
+public class EmailService {
+
+}

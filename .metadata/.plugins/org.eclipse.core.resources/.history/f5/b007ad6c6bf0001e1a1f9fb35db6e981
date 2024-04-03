@@ -1,0 +1,27 @@
+package com.qtechlabs.controller;
+
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
+
+@RestController
+@RequestMapping("/api/v1/email")
+public class EmailController {
+
+	@GetMapping("/welcome")
+	public ResponseEntity<String> welcomeMessage() {
+
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<String> response = restTemplate.exchange("http://localhost:9096/api/v1/hrms/leaves",
+				HttpMethod.GET, null, String.class);
+
+		String welcomeMessage = "You have been onboarded successfully in the Organization "
+				+ "and an Email has been sent to your registered mail address, Thank you..";
+
+		return new ResponseEntity<>(welcomeMessage, response.getStatusCode());
+	}
+
+}

@@ -1,0 +1,10 @@
+spring.application.name=employee-microservice
+
+server.port=9095
+
+spring.jpa.hibernate.ddl-auto=none
+
+
+spring.datasource.url=jdbc:mysql://localhost:3306/employee_management
+spring.datasource.username=root
+spring.datasource.password=abc1234

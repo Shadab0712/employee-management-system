@@ -1,0 +1,20 @@
+package com.qtechlabs.controller;
+
+@RestController
+@RequestMapping("/api/v1/email")
+public class EmailController {
+
+	@GetMapping("/welcome")
+	public ResponseEntity<String> welcomeMessage() {
+
+		RestTemplate restTemplate = new RestTemplate();
+		ResponseEntity<String> response = restTemplate.exchange("http://localhost:9096/api/v1/hrms/leaves",
+				HttpMethod.GET, null, String.class);
+
+		String welcomeMessage = "You have been onboarded successfully in the Organization "
+				+ "and an Email has been sent to your registered mail address, Thank you..";
+
+		return new ResponseEntity<>(welcomeMessage, response.getStatusCode());
+	}
+
+}

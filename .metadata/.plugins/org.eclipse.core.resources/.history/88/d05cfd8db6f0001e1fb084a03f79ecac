@@ -1,0 +1,15 @@
+FROM openjdk:8
+
+WORKDIR /shadab
+
+COPY target/email-microservice-1.0.jar email-microservice-1.0.jar
+
+COPY docker-entrypoint.sh docker-entrypoint.sh
+
+RUN chmod +x /shadab/docker-entrypoint.sh
+
+EXPOSE 8086
+
+ENTRYPOINT ["/shadab/docker-entrypoint.sh"]
+
+CMD ["product-microservice-1.0.jar"]

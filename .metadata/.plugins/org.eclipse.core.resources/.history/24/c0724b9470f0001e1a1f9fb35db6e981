@@ -1,0 +1,19 @@
+package com.qtechlabs.service;
+
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+@Service
+public class HRMSService {
+
+	public String getMessage() {
+
+		String welcomeMessage = "You have been granted 2 sick leaves "
+				+ "and 1 casual leave as pur internal policy , ThankYou.. ";
+
+		return welcomeMessage;
+	}
+
+}
