@@ -30,7 +30,7 @@ public class EmployeeManagementService {
 		repository.save(employee);
 
 		RestTemplate httpJavaClient = new RestTemplate();
-		ResponseEntity<String> response = httpJavaClient.exchange("http://email-microservice-container:9096/api/v1/email/welcome",
+		ResponseEntity<String> response = httpJavaClient.exchange("http://localhost:9096/api/v1/email/welcome",
 				HttpMethod.GET, null, String.class);
 
 		if (response.getStatusCode().is2xxSuccessful()) {

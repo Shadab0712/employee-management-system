@@ -14,7 +14,7 @@ public class EmailService {
 				+ "and an Email has been sent to your registered mail address, Thank you..";
 
 		RestTemplate restTemplate = new RestTemplate();
-		ResponseEntity<String> response = restTemplate.exchange("http://hrms-microservice-container:9097/api/v1/hrms/leaves",
+		ResponseEntity<String> response = restTemplate.exchange("http://localhost:9097/api/v1/hrms/leaves",
 				HttpMethod.GET, null, String.class);
 		
 		return welcomeMessage;
