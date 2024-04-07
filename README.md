@@ -177,7 +177,7 @@ Describe the available Actuator endpoints and their functionalities:
 ---
 <br><br>
 
-##Git Overview
+## Git Overview
 - **Git is a VCS → version control system.**
 
 ```bash
